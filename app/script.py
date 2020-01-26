@@ -34,6 +34,6 @@ for filename_a in os.listdir('/app/input_txt_a'):
 now = datetime.now()
 timestamp = datetime.timestamp(now)
 
-with open("/app/csv_confrontation/confrontation"+str(timestamp)+".csv","w+") as my_csv:
+with open("/app/output_csv/confrontation"+str(timestamp)+".csv","w+") as my_csv:
     csvWriter = csv.writer(my_csv,delimiter=',')
     csvWriter.writerows(result_array)
