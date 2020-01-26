@@ -7,15 +7,15 @@ from datetime import datetime
 print('TXT_SIMILARITY')
 result_array = []
 result_array.append( ['file_A','file_B','hamming_normalized','levenshtein_normalized','jaro_winkler','ratcliff_obershelp','jaccard'])
-for filename_a in os.listdir('/app/txt_a'):
+for filename_a in os.listdir('/app/input_txt_a'):
 
     if filename_a.endswith(".txt"):
-        path_a = '/app/txt_a'+'/'+filename_a
+        path_a = '/app/input_txt_a'+'/'+filename_a
         with open(path_a, 'r') as file:
             data_a = file.read()
-            for filename_b in os.listdir('/app/txt_b'):
+            for filename_b in os.listdir('/app/input_txt_b'):
                 if filename_b.endswith(".txt"):
-                    path_b = '/app/txt_b'+'/'+filename_b
+                    path_b = '/app/input_txt_b'+'/'+filename_b
                     with open(path_b, 'r') as file:
                         data_b = file.read()
                         print('(A: '+filename_a+') VS (B: '+filename_b+')')
